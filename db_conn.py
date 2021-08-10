@@ -1,7 +1,7 @@
 import sqlite3
 
 #connect to db
-conn= sqlite3.connect('/Users/hemanthdatta/Codess/dates.db')
+conn= sqlite3.connect('dates.db')
 
 
 #create a cursor
