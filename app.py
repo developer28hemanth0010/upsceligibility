@@ -15,7 +15,7 @@ def send():
     if request.method =='POST':
         exam= str(request.form['exam'])
         input_dob= str(request.form['input_dob'])
-        category= str(request.form['category'])
+        # category= str(request.form['category'])
         gender= str(request.form['gender'])
         preference= str(request.form['preference'])
 
@@ -54,6 +54,11 @@ def send():
             results_cds_ima04= ' '.join(str(v) for v in results_cds_ima04)
             
             return render_template("index.html", results_cds_ima=results_cds_ima, results_cds_ima04=results_cds_ima04)
+        
+        elif exam=="Combined Defence Services Examination" and (gender=="Female" or gender=="Others") and (preference=="IMA" or preference=="INA" or preference=="AFA"):
+            cds_women_error="Women are only eligible to apply for OTA through CDS entry."
+            return render_template("index.html", cds_women_error=cds_women_error)
+
 
             #for cds and afa
 
@@ -82,6 +87,10 @@ def send():
             results_cds_ota04= results_cds_ota_list[0:5]
             results_cds_ota04= ' '.join(str(v) for v in results_cds_ota04)
             return render_template("index.html", results_cds_ota=results_cds_ota, results_cds_ota04=results_cds_ota04)
+        
+        elif exam=="Combined Defence Services Examination" and gender=="Others" and preference=="OTA":
+            cds_others_error="Ternanry genders are not eligible to apply for OTA through CDS entry."
+            return render_template("index.html", cds_others_error=cds_others_error)
                           
 
 if __name__=="__main__":
