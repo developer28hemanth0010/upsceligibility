@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" 
+    rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" 
+        crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
+    <title>UPSC Eligibility</title>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    </nav>
+    <div class="container">
+        <form action="/w4" method='POST'>
+            <div class="row">
+                <div class="form-group col-xs-3">
+                    <select class="form-select mt-5" name="exam" id="exam_id" aria-label="Default select example">
+                        <option selected>Select Your Examination</option>
+                        <option value="National Defence Academy">National Defence Academy</option>
+                        <option value="Combined Defence Services Examination">Combined Defence Services Examination
+                        </option>
+                        <option value="Civil Services Examination">Civil Services Examination</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-xs-3">
+                    <select class="form-select mt-3" name="category" id="category_id" aria-label="Disabled select example">
+                        <option selected>Select Your Category</option>
+                        <option value="General">General</option>
+                        <option value="OBC">OBC
+                        </option>
+                        <option value="SC/ST">SC/ST</option>
+                        <option value="EWS">EWS</option>
+                        <option value="PWD">PWD</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-xs-3">
+                    <select class="form-select mt-3" name="gender" id="gender_id" aria-label="Disabled select example">
+                        <option selected>Select Your Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female
+                        </option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-xs-3">
+                    <select class="form-select mt-3" name="preference" id="preference_id" aria-label="Disabled select example">
+                        <option selected>Select Your First Preference (As given in form)</option>
+                        <option value="IMA">IMA</option>
+                        <option value="INA">INA
+                        </option>
+                        <option value="AFA">AFA</option>
+                        <option value="OTA">OTA</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-xs-3">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label mt-5">DOB</label>
+                        <input type="text" class="form-control" id="datetimepicker1" name="input_dob">
+                        <div class="form-text">Enter your DOB in YYYY-MM-DD form.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-xs-3">
+                    <input type="submit" value="Calculate " class="btn btn-outline-dark" />
+                    <br />
+                </div>
+            </div>
+            <br>
+            <div class="alert alert-secondary" role="alert">
+                {%if results_nda%}
+               Your NDA attempts are {{ results_nda }}. kindly note your 1st and 2nd attempt i.e {{ results_nda0 }} and {{ results_nda1 }} will not be considered valid as you will still be undergoing schooling.
+                {%endif%}
+                {%if nda_error%}
+                Women and ternanry genders are presently not accepted in the National Defence Academy  
+                {%endif%}
+                {%if nda_age_error%}
+                Your entered age is out of attempts, or the database is being updated.
+                {%endif%}
+
+
+
+                {%if results_cds_ima%}
+               Your available CDS IMA and INA attempts are {{ results_cds_ima }}. kindly note your first 4 attempts i.e {{ results_cds_ima04 }} will not be considered valid as you will still be undergoing college.
+                {%endif%}
+
+
+                {%if results_cds_afa%}
+               Your available CDS AFA attempts are {{ results_cds_afa }}. kindly note your first 4 attempts i.e {{ results_cds_afa04 }} will not be considered valid as you will still be undergoing college.
+                {%endif%}
+
+
+                {%if results_cds_ota%}
+               Your available CDS OTA attempts are {{ results_cds_ota }}. kindly note your first 4 attempts i.e {{ results_cds_ota04 }} will not be considered valid as you will still be undergoing college.
+                {%endif%}
+            </div>
+        </form>
+
+    </div>
+
+    </div>
+    <br />
+    <br />
+    <br>
+    <br>
+    <p class="text-center">Kidnly note, these numbers are only an estimate, refer to only official notifications to know the exact eligibility. The servers for Civil Services Examination are down we are constantly working on getting them ready</p>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" 
+    integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" 
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" 
+    integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" 
+    crossorigin="anonymous">
+    </script>
+    -->
+</body>
+
+</html>
