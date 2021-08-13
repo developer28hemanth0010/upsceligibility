@@ -21,8 +21,6 @@
     <script src="braintree-client.js"></script>
     <script src="braintree-hosted-fields.js"></script>
     <script src="braintree-hosted-fields-bootstrap.js"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6243072035544198"
-     crossorigin="anonymous"></script>
 
     <title>UPSC Eligibility</title>
 
@@ -38,20 +36,21 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
     </nav>
-    <div class="container">
-        <form action="/w4" method='POST'>
-            <div class="row">
-                <div class="form-group col-xs-3">
-                    <select class="form-select mt-5" name="exam" id="exam_id" aria-label="Default select example">
-                        <option selected>Select Your Examination</option>
-                        <option value="National Defence Academy">National Defence Academy</option>
-                        <option value="Combined Defence Services Examination">Combined Defence Services Examination
-                        </option>
-                        <option value="Civil Services Examination" disabled>Civil Services Examination</option>
-                    </select>
-                </div>
-            </div>
-            <div class="row">
+
+            <div class="container">
+                <form action="/w4" method='POST'>
+                    <div class="row">
+                        <div class="form-group col-xl-5 px-5 mx-auto">
+                            <select class="form-select mt-5" name="exam" id="exam_id" aria-label="Default select example">
+                                <option selected>Select Your Examination</option>
+                                <option value="National Defence Academy">National Defence Academy</option>
+                                <option value="Combined Defence Services Examination">Combined Defence Services Examination</option>
+                                <option value="AFCAT">AFCAT</option>
+                                <!-- <option value="Civil Services Examination" disabled>Civil Services Examination</option> -->
+                            </select>
+                        </div>
+                    </div>
+            <!-- <div class="row">
                 <div class="form-group col-xs-3">
                     <select class="form-select mt-3" name="category" id="category_id"
                         aria-label="Disabled select example" disabled>
@@ -64,20 +63,20 @@
                         <option value="PWD">PWD</option>
                     </select>
                 </div>
-            </div>
+            </div> -->
             <div class="row">
-                <div class="form-group col-xs-3">
+                <div class="form-group col-xl-5 px-5 mx-auto">
                     <select class="form-select mt-3" name="gender" id="gender_id" aria-label="Disabled select example">
                         <option selected>Select Your Gender</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female
                         </option>
-                        <option value="Others">Others</option>
+                        <option disabled value="Others">Others</option>
                     </select>
                 </div>
             </div>
             <div class="row">
-                <div class="form-group col-xs-3">
+                <div class="form-group col-xl-5 px-5 mx-auto">
                     <select class="form-select mt-3" name="preference" id="preference_id"
                         aria-label="Disabled select example">
                         <option selected>Select Your First Preference (As given in form)</option>
@@ -89,39 +88,35 @@
                     </select>
                 </div>
             </div>
+
             <div class="row">
-                <div class="form-group col-xs-3">
+                <div class="form-group col-xl-5 px-5 mx-auto">
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label mt-4">DOB</label>
-                        <input type="text" class="form-control" id="datetimepicker1" name="input_dob">
+                        <input type="text" class="form-control" id="datetimepicker1" name="input_dob" placeholder="Example 2002-10-28">
                         <div class="form-text">Enter your DOB in YYYY-MM-DD form.</div>
                     </div>
                 </div>
             </div>
 
             <div class="row">
-                <div class="form-group col-xs-3">
+                <div class="form-group col-xl-5 px-5 mx-auto">
                     <input type="submit" value="Calculate " class="btn btn-outline-dark" />
                     <br />
                 </div>
             </div>
             <br>
-            <div class="alert alert-secondary" role="alert">
+            <div class="alert alert-secondary col-xl-15 px-5 mx-5 text-center" role="alert">
                 {%if results_nda%}
-                Your NDA attempts are {{ results_nda }}. kindly note your 1st and 2nd attempt i.e {{ results_nda0 }} and
-                {{ results_nda1 }} will not be considered valid as you will still be undergoing schooling.
+                Your available NDA attempts is/are {{ results_nda }}.
                 {%endif%}
-                {%if nda_error%}
-                Women and ternanry genders are presently not accepted in the National Defence Academy
-                {%endif%}
-                {%if nda_age_error%}
-                Your entered age is out of attempts, or the database is being updated.
+                {%if ageover_error%}
+                Your entered age is out of attempts.
                 {%endif%}
 
 
                 {%if results_cds_ima%}
-                Your available CDS IMA and INA attempts are {{ results_cds_ima }}. kindly note your first 4 attempts i.e
-                {{ results_cds_ima04 }} will not be considered valid as you will still be undergoing college.
+                Your available CDS IMA and INA attempts is/are {{ results_cds_ima }}. 
                 {%endif%}
                 {%if cds_women_error%}
                 Women are only eligible to apply for OTA through CDS entry.
@@ -129,18 +124,20 @@
 
 
                 {%if results_cds_afa%}
-                Your available CDS AFA attempts are {{ results_cds_afa }}. kindly note your first 4 attempts i.e {{
-                results_cds_afa04 }} will not be considered valid as you will still be undergoing college.
-                {%endif%}
-
-                {%if cds_others_error%}
-                Ternanry genders are not eligible to apply for OTA through CDS entry.
+                Your available CDS AFA attempt is/are {{ results_cds_afa }}. 
                 {%endif%}
 
 
                 {%if results_cds_ota%}
-                Your available CDS OTA attempts are {{ results_cds_ota }}. kindly note your first 4 attempts i.e {{
-                results_cds_ota04 }} will not be considered valid as you will still be undergoing college.
+                Your available CDS OTA attempts are {{ results_cds_ota }}. 
+                {%endif%}
+
+                {%if results_afcat_fb%}
+                Your available AFCAT Flying Branch attempts is/are {{ results_afcat_fb }}.
+                {%endif%}
+
+                {%if results_afcat_gd%}
+                Your available AFCAT Flying Branch attempts is/are {{ results_afcat_gd }}.
                 {%endif%}
             </div>
         </form>
@@ -149,13 +146,87 @@
 
     </div>
     <br />
-    <br />
     <br>
     <br>
-    <p class="text-center">Kidnly note, these numbers are only an estimate, refer to only official notifications to know
+    <p class="alert alert-warning col-auto px-5 mx-5">
+         Kidnly note, these numbers are only an estimate, refer to only official notifications to know
         the exact eligibility. The servers for Civil Services Examination are down we are constantly working on getting
         them ready</p>
+    <br>
+    <br>
+    <br>
+    <p class="fs-1 text-center">About NDA</p>
+    <br>
+    <p class="mx-5">National Defence Academy has emerged as an iconic Military Academy over years, attracting not only the finest young men from all corners of the country but also from friendly foreign countries. 
+        In the seven decades of its glorious existence, National Defence Academy has grown both in grace and grandeur. From its portals have graduated the 'The Leaders of the men', who have proved their worth and have demonstrated the essence 
+        of inter-services camaraderie and jointmanship, thereby vindicating the faith and vision of its founding fathers. 
+        National Defence Academy is recognized by the Jawaharlal Nehru University, New Delhi, for the award of B.A./B.Sc./B.Sc (Computer Science) for Army Cadets and B Tech degree for Navy and Air Force Cadets. 
+        NDA has been recognized by Jawaharlal Nehru University (JNU), New Delhi since 1973.  Academic excellence is a prerequisite for continued trainability. Academic instruction at the NDA is imparted by qualified and highly motivated 
+        Academic officers Civilian and Service Instructors. The curriculum is well-rounded but demanding and is supported by up-to-date libraries and laboratories. The aim is to achieve excellence in academic pursuits without compromising on outdoor activities. 
+        The Chiefs Commandant’s Gallery Men at Helm Valour, Glory, Sacrifice & Duty – The Men of Defence are the epitome of the highest values that our country stands for. From the icy landscapes of Siachen to the arid deserts of Rajasthan, 
+        they act as a shield for over a billion lives in our country keeping us safe from all external threats that continue to haunt our borders. The Hall of Fame honors the achievements of the Men at Helm and the Chiefs of Staff.</p>
+    <br>
+    <br>
+    <p class="fs-1 text-center">Combined Defense Services Examination</p>
+    <br>
+    <p class="mx-5">
+        The Combined Defence Services Examination (abbreviated as CDS Exam) is conducted by the Union Public Service Commission for recruitment of Commissioned Officers in the Indian Military Academy, 
+        Officers Training Academy, Indian Naval Academy and Indian Air Force Academy. 
+        The Notification for the examination is usually released in the months of October and June, and the examinations are conducted in February and November respectively. Only unmarried graduates 
+        are eligible to sit for the exam. Examination is conducted twice a year. Successful candidates are admitted into the respective Academies after an interview conducted by the Services Selection Board. 
+        All candidates who apply for the Air Force through more than one source will be tested/interviewed at the Air Force Selection Boards only once for Air Force. Common candidates who fail in Computer Pilot 
+        Selection System (CPSS) and/ or Pilot Aptitude Battery tests as an NCC or Airmen candidate will be called again for OLQ testing for Army/Navy/OTA only if it is found that they have applied through CDS Exam.
+    </p>
+    <br>
+    <br>
+    <p class="fs-1 text-center">AFCAT exam</p>
+    <br>
+    <p class="mx-5">
+        Air Force Common Admission Test commonly known as AFCAT is an entrance examination conducted by Indian Air Force to select eligible and desirable candidates for multiple posts in Flying and Ground Duty 
+        [Technical and Non- Technical]. AFCAT is conducted twice every year and millions of students appear to ace 
+        this exam and join reputable Air Force Academy and get commission as an Indian Air Force Officer. 
+        To crack the exam with good marks, aspirants must be well-versed with the AFCAT 2021 Syllabus, Exam Pattern, Eligibility Criteria and Selection Process. This exam has brought out the possibility of serving 
+        in an adventurous field for both male and female candidates which are befitting to the Young minds and 
+        flexibility of this dynamic generation. Serving in such a commendable and respected field is an honor in itself.
+    </p>
 
+    <script>
+    $(document).ready(function () {
+        $("#exam_id").change(function () {
+            var val = $(this).val();
+            if (val == "National Defence Academy") {
+                $("#gender_id").html("<option value='Male'>Male</option>");
+                $("#preference_id").html("<option selected>Select Your First Preference (As given in form)</option><option value='IMA'>IMA</option><option value='INA'>INA</option><option value='AFA'>AFA</option><option disabled value='OTA'>OTA</option>");
+            }
+        });
+    });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $("#exam_id").change(function () {
+                var val = $(this).val();
+                if (val == "Combined Defence Services Examination") {
+                    // $("#gender_id").html("<option selected>Select Your Gender</option><option value='Male'>Male</option><option value='Female'>Female</option><option value='Others'>Others</option>");     
+                if ($("#gender_id").val() == "Female") {
+                    $("#preference_id").html("</option><option disabled value='OTA'>OTA</option>")
+                    }
+                }
+            });
+        });
+        </script>
+    
+    <script>
+        $(document).ready(function () {
+            $("#exam_id").change(function () {
+                var val = $(this).val();
+                if (val == "AFCAT") {
+                    // $("#gender_id").html("<option selected>Select Your Gender</option><option value='Male'>Male</option><option value='Female'>Female</option><option value='Others'>Others</option>");
+                    $("#preference_id").html("<option selected>Select Your Role</option><option value='AFA_flying'>AFA Flying Branch</option><option value='AFA_gd'>AFA Ground Duties</option>");
+                }
+            });
+        });
+        </script>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
