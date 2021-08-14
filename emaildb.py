@@ -1,5 +1,5 @@
 import sqlite3
-conn= sqlite3.connect('/Users/hemanthdatta/Codess/emails.db')
+conn= sqlite3.connect('emails.db')
 c= conn.cursor()
 # c.execute("""CREATE TABLE email_list (
 #         exam text,
