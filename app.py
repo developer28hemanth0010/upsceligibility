@@ -21,7 +21,7 @@ def send():
 
         #ONLY FOR NATIONAL DEFENCE ACADEMY
 
-        if exam=="National Defence Academy" and gender=="Male":
+        if exam=="National Defence Academy":
             import db_conn
             conn = sqlite3.connect('dates.db', check_same_thread=False)
             results_nda_list= db_conn.c.execute(f"""SELECT course from nda WHERE starting_date <= '{input_dob}'
@@ -36,11 +36,6 @@ def send():
                 ageover_error='Your entered age is out of attempts.'
                 return render_template("index.html",ageover_error=ageover_error)
 
-
-            
-        elif exam=="National Defence Academy" and (gender=="Female" or gender=="Others"):
-            nda_error='Women and ternanry genders are presently not accepted in the National Defence Academy'
-            return render_template("index.html", nda_error=nda_error)
 
 
             #FOR CDS IMA AND INA
