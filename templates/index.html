@@ -213,7 +213,7 @@
     <!-- <style>p1{padding-left: 100px; padding-right: 100px; width: fit-content; background-image: url('8pl20aokny651.jpeg');}</style> -->
     <p>
         The Civil Services Examination (CSE) is a nationwide competitive examination in India conducted by the Union Public Service Commission for recruitment to higher Civil Services of the Government of India, including the Indian Administrative Service, Indian Foreign Service, 
-        and Indian Police Service. Also simply referred to as the UPSC examination,[2] it is conducted in three phases - a preliminary examination consisting of two objective-type papers (General Studies Paper I and General Studies Paper II also popularly known as Civil Service Aptitude Test or CSAT), 
+        and Indian Police Service. Also simply referred to as the UPSC examination, it is conducted in three phases - a preliminary examination consisting of two objective-type papers (General Studies Paper I and General Studies Paper II also popularly known as Civil Service Aptitude Test or CSAT), 
         and a main examination consisting of nine papers of conventional (essay) type, in which two papers are qualifying and only marks of seven are counted followed by a personality test (interview).[2] A successful candidate sits for 32 hours of examination during the complete process.
     </p>
 
@@ -222,7 +222,7 @@
         $("#exam_id").change(function () {
             var val = $(this).val();
             if (val == "National Defence Academy") {
-                $("#gender_id").html("<option value='Male'>Male</option>");
+                $("#gender_id").html("<option value='Male'>Male</option><option value='Female'>Female</option>");
                 $("#preference_id").html("<option selected>Select Your First Preference (As given in form)</option><option value='IMA'>IMA</option><option value='INA'>INA</option><option value='AFA'>AFA</option><option disabled value='OTA'>OTA</option>");
                 $("#category_id").html("<select class='form-select mt-3' name='Category' id='category_id' aria-label='Default select example' disabled>")
             }
