@@ -147,6 +147,27 @@ def send():
             else:
                 ageover_error='Your entered age is out of attempts.'
                 return render_template("index.html",ageover_error=ageover_error)
+
+
+           # for CSE 
+        
+        elif exam=="Civil Services Examination":
+            import db_conn
+            conn = sqlite3.connect('dates.db', check_same_thread=False)
+            results_afcat_fb_list=db_conn.c.execute(f"""SELECT course from cse WHERE starting_date <= '{input_dob}'
+                                        and ending_date >= '{input_dob}'
+                                    """)
+            results_cse_list= list(db_conn.c.fetchall())
+            if len(results_cse_list):
+                results_cse= ' '.join(str(v) for v in results_cse_list)
+                # results_afcat_gd04= results_afcat_gd_list[0:5]
+                # results_afcat_gd04= ' '.join(str(v) for v in results_afcat_gd04)
+                return render_template("index.html", results_cse=results_cse)        
+
+            else:
+                ageover_error='Your entered age is out of attempts.'
+                return render_template("index.html",ageover_error=ageover_error)
+
         else:
             return render_template("index.html")
 
@@ -185,10 +206,3 @@ def getmail():
 
 if __name__=="__main__":
     app.run(debug=True)
-
-
-
-
-
-
- 
