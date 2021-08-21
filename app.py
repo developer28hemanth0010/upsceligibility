@@ -21,7 +21,7 @@ def send():
 
         #ONLY FOR NATIONAL DEFENCE ACADEMY
 
-        if exam=="National Defence Academy":
+        if exam=="National Defence Academy" and gender=="Male":
             import db_conn
             conn = sqlite3.connect('dates.db', check_same_thread=False)
             results_nda_list= db_conn.c.execute(f"""SELECT course from nda WHERE starting_date <= '{input_dob}'
@@ -36,6 +36,11 @@ def send():
                 ageover_error='Your entered age is out of attempts.'
                 return render_template("index.html",ageover_error=ageover_error)
 
+
+            
+        elif exam=="National Defence Academy" and (gender=="Female" or gender=="Others"):
+            nda_error='Women and ternanry genders are presently not accepted in the National Defence Academy'
+            return render_template("index.html", nda_error=nda_error)
 
 
             #FOR CDS IMA AND INA
@@ -179,25 +184,27 @@ def getmail():
         exam= str(request.form['exam2442'])
         input_mail= str(request.form['email2442'])
         if exam=="National Defence Academy":
-            import emaildb
+            import db_conn
             sqlite3.connect('emails.db', check_same_thread=False)
-            ess=emaildb.c.execute(f"INSERT INTO email_list VALUES ('NDA', '{input_mail}')")
-            emaildb.conn.commit()
+            ess=db_conn.c.execute(f"INSERT INTO email_list VALUES ('NDA', '{input_mail}')")
+            db_conn.conn.commit()
             return render_template("sendmail.html")
         if exam=="Combined Defence Services Examination":
-            import emaildb
+            import db_conn
             sqlite3.connect('emails.db', check_same_thread=False)
-            ess=emaildb.c.execute(f"INSERT INTO email_list VALUES ('CDS', '{input_mail}')")
-            emaildb.conn.commit()
+            ess=db_conn.c.execute(f"INSERT INTO email_list VALUES ('CDS', '{input_mail}')")
+            db_conn.conn.commit()
             return render_template("sendmail.html")
         if exam=="AFCAT":
-            import emaildb
+            import db_conn
             sqlite3.connect('emails.db', check_same_thread=False)
-            ess=emaildb.c.execute(f"INSERT INTO email_list VALUES ('AFCAT', '{input_mail}')")
-            emaildb.conn.commit()
+            ess=db_conn.c.execute(f"INSERT INTO email_list VALUES ('AFCAT', '{input_mail}')")
+            db_conn.conn.commit()
             return render_template("sendmail.html")
         else:
             return render_template("sendmail.html")            
 
 if __name__=="__main__":
     app.run(debug=True)
+
+ 
