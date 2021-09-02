@@ -5,242 +5,116 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
-    <script src="jquery.js"></script>
-    <script src="bootstrap.js"></script>
-    <script src="braintree-client.js"></script>
-    <script src="braintree-hosted-fields.js"></script>
-    <script src="braintree-hosted-fields-bootstrap.js"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6243072035544198"
-     crossorigin="anonymous"></script>
-    <meta name="propeller" content="08365b5e4cbff9b6b8a93c0d49880133">
-    
-<!--     <script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://iclickcdn.com/tag.min.js',4459712,document.body||document.documentElement)</script> -->
-    <script type="text/javascript" src="//inpage-push.com/400/4459711" data-cfasync="false" async="async"></script>
- <!-- <script async="async" data-cfasync="false" src="//upgulpinon.com/1?z=4459717"></script> -->
-<!--     <script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://iclickcdn.com/tag.min.js',4459767,document.body||document.documentElement)</script> -->
-<!--     <script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://iclickcdn.com/tag.min.js',4463478,document.body||document.documentElement)</script> -->
-<!--     //soaheeme.net/4/4463480
-    //thaudray.com/4/4463482 -->
-    <link rel="shortcut icon" type="img/png" href="favicon.png">
-    <title>Check your number of UPSC attempts using this tool</title>
-    <link rel="shortcut icon" type="img/png" href="favicon.png">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- <meta name="propeller" content="08365b5e4cbff9b6b8a93c0d49880133">
+    <script type="text/javascript" src="//inpage-push.com/400/4459711" data-cfasync="false" async="async"></script>     -->
+    <title>Check Your No Of UPSC Attempts</title>
 </head>
 
 <body>
-    <!-- <style>nav{width: 1300px; padding-left: 0px;}</style> -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-light">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">Home</a>
+            <a class="navbar-brand" href="/" style="color: azure;">Home</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/sendmail2442">Notify Me</a>
-                </li>
+        </div>
     </nav>
-    <br>
-    <br>
-    <h1 class="fs-1 text-center">Enter your details here to check your number of attempts</h1>
-            <div class="container">
-                <form action="/w4" method='POST'>
-                    <div class="row">
-                        <div class="form-group col-xl-5 px-5 mx-auto">
-                            <select class="form-select mt-5" name="exam" id="exam_id" aria-label="Default select example">
-                                <option disabled selected>Select Your Examination</option>
-                                <option value="National Defence Academy">National Defence Academy</option>
-                                <option value="Combined Defence Services Examination">Combined Defence Services Examination</option>
-                                <option value="AFCAT">AFCAT</option>
-                                <option value="Civil Services Examination">Civil Services Examination</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="form-group col-xl-5 px-5 mx-auto">
-                            <select class="form-select mt-3" name="Category" id="category_id" aria-label="Default select example">
-                                <option selected>Select Your Category</option>
-                                <option value="general">General</option>
-                                <option value="OBC">OBC</option>
-                                <option value="SC/ST">SC/ST</option>
-                                <option value="PWD">PWD</option>
-                            </select>
-                        </div>
-                    </div>
-           
-                    <div class="row">
-                        <div class="form-group col-xl-5 px-5 mx-auto">
-                            <select class="form-select mt-3" name="gender" id="gender_id" aria-label="Disabled select example">
-                                <option disabled selected>Select Your Gender</option>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="form-group col-xl-5 px-5 mx-auto">
-                            <select class="form-select mt-3" name="preference" id="preference_id"
-                                aria-label="Disabled select example">
-                                <option disabled selected>Select Your First Preference (As given in form)</option>
-                                <option value="IMA">IMA</option>
-                                <option value="INA">INA</option>
-                                <option value="AFA">AFA</option>
-                                <option value="OTA">OTA</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="form-group col-xl-5 px-5 mx-auto">
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label mt-4">DOB</label>
-                                <input type="text" class="form-control" id="datetimepicker1" name="input_dob" placeholder="Example 2002-10-28">
-                                <div class="form-text">Enter your DOB in YYYY-MM-DD form.</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="form-group col-xl-5 px-5 mx-auto">
-                            <input type="submit" value="Calculate " class="btn btn-outline-dark" />
-                            <br />
-                        </div>
-                    </div>
-                    <br>
-                    <div class="alert alert-success col-xl-15 px-5 mx-5 text-center" role="alert">
-                        {%if results_nda%}
-                        Your available NDA attempts is/are {{ results_nda }}.
-                        {%endif%}
-                        {%if ageover_error%}
-                        Your entered age is out of attempts.
-                        {%endif%}
 
 
-                        {%if results_cds_ima%}
-                        Your available CDS IMA and INA attempts is/are {{ results_cds_ima }}. 
-                        {%endif%}
-                        {%if cds_women_error%}
-                        Women are only eligible to apply for OTA through CDS entry.
-                        {%endif%}
+    <form action="/get" method='POST'>
+
+        <select class="form-select mx-auto p-2 align-items-center" name="exam" id="exam_id"
+            aria-label="Default select example"
+            style="background-color: rgb(121, 121, 121); color: azure; width: 320px; margin-top: 80px;">
+            <option selected>Select Your Examination</option>
+            <option value="National Defence Academy">National Defence Academy</option>
+            <option value="Combined Defence Services Examination">Combined Defence Services Examination</option>
+            <option value="AFCAT">AFCAT</option>
+            <option value="Civil Services Examination">Civil Services Examination</option>
+        </select>
 
 
-                        {%if results_cds_afa%}
-                        Your available CDS AFA attempt is/are {{ results_cds_afa }}. 
-                        {%endif%}
+        <select class="form-select mt-4 mx-auto p-2 align-items-center" name="Category" id="category_id"
+            aria-label="Default select example"
+            style="background-color: rgb(121, 121, 121); color: azure; width: 320px;">
+            <option disabled selected>Select Your Category</option>
+            <option value="general">General</option>
+            <option value="OBC">OBC</option>
+            <option value="SC/ST">SC/ST</option>
+            <option value="PWD">PWD</option>
+        </select>
 
 
-                        {%if results_cds_ota%}
-                        Your available CDS OTA attempts are {{ results_cds_ota }}. 
-                        {%endif%}
+        <select class="form-select mt-4 mx-auto p-2 align-items-center" name="gender" id="gender_id"
+            aria-label="Disabled select example"
+            style="background-color: rgb(121, 121, 121); color: azure; width: 320px;">
+            <option disabled selected>Select Your Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
 
-                        {%if results_afcat_fb%}
-                        Your available AFCAT Flying Branch attempts is/are {{ results_afcat_fb }}.
-                        {%endif%}
 
-                        {%if results_afcat_gd%}
-                        Your available AFCAT Flying Branch attempts is/are {{ results_afcat_gd }}.
-                        {%endif%}
+        <select class="form-select mt-4 mx-auto p-2 align-items-center" name="preference" id="preference_id"
+            aria-label="Disabled select example"
+            style="background-color: rgb(121, 121, 121); color: azure; width: 320px;">
+            <option disabled selected>Select Your First Preference (As given in form)</option>
+            <option value="IMA">IMA</option>
+            <option value="INA">INA</option>
+            <option value="AFA">AFA</option>
+            <option value="OTA">OTA</option>
+        </select>
 
-                        {%if results_cse%}
-                        Your available Civil Services Examination attempts is/are {{ results_cse }} This list in only for General students check below for age relaxation limits.<br /><br />Age Relaxation on upper age limit for category students and Ex-Servicemen:<br />
-                        1. OBC= +3 years<br />
-                        2. SC/ST= +5 years<br />
-                        3. PWD= +10 years<br />
-                        4. Ex-Servicemen with 5 years of service= +5 years
-                        {%endif%}
 
-                    </div>
-                </form>
+        <div class="form-group col-xl-5 px-5 mx-auto">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label mt-4" style="color: azure;">DOB</label>
+                <input type="text" class="form-control" id="datetimepicker1" name="input_dob"
+                    placeholder="Example 2002-10-28" style="background-color: rgb(121, 121, 121); color: azure;">
+                <div class="form-text" style="color: rgb(185, 185, 185);">Enter your DOB in YYYY-MM-DD form.</div>
+            </div>
+        </div>
+        </div>
 
-    </div>
 
-    </div>
-    <br />
-    <br>
-    <br>
-    <!-- <style>p2{padding-left: 150px; padding-right: 150px;}</style> -->
-    <p class="alert alert-warning col-auto px-5 mx-5 text-center">
-         Kidnly note, these numbers are only an estimate, refer to only official notifications to know
-        the exact eligibility.</p>
-    <br>
-    <br>
-    <br>
-    <style>p{padding-left: 100px; padding-right: 100px; width: fit-content;}</style>
-    <h1 class="fs-1 text-center">About NDA</h1>
-    <br>
-    <p>National Defence Academy has emerged as an iconic Military Academy over years, attracting not only the finest young men from all corners of the country but also from friendly foreign countries. 
-        In the seven decades of its glorious existence, National Defence Academy has grown both in grace and grandeur. From its portals have graduated the 'The Leaders of the men', who have proved their worth and have demonstrated the essence 
-        of inter-services camaraderie and jointmanship, thereby vindicating the faith and vision of its founding fathers. 
-        National Defence Academy is recognized by the Jawaharlal Nehru University, New Delhi, for the award of B.A./B.Sc./B.Sc (Computer Science) for Army Cadets and B Tech degree for Navy and Air Force Cadets. 
-        NDA has been recognized by Jawaharlal Nehru University (JNU), New Delhi since 1973.  Academic excellence is a prerequisite for continued trainability. Academic instruction at the NDA is imparted by qualified and highly motivated 
-        Academic officers Civilian and Service Instructors. The curriculum is well-rounded but demanding and is supported by up-to-date libraries and laboratories. The aim is to achieve excellence in academic pursuits without compromising on outdoor activities. 
-        The Chiefs Commandant’s Gallery Men at Helm Valour, Glory, Sacrifice & Duty – The Men of Defence are the epitome of the highest values that our country stands for. From the icy landscapes of Siachen to the arid deserts of Rajasthan, 
-        they act as a shield for over a billion lives in our country keeping us safe from all external threats that continue to haunt our borders. The Hall of Fame honors the achievements of the Men at Helm and the Chiefs of Staff.</p>
-    <br>
-    <br>
-    <h1 class="fs-1 text-center">Combined Defense Services Examination</h1>
-    <br>
-    <p>
-        The Combined Defence Services Examination (abbreviated as CDS Exam) is conducted by the Union Public Service Commission for recruitment of Commissioned Officers in the Indian Military Academy, 
-        Officers Training Academy, Indian Naval Academy and Indian Air Force Academy. 
-        The Notification for the examination is usually released in the months of October and June, and the examinations are conducted in February and November respectively. Only unmarried graduates 
-        are eligible to sit for the exam. Examination is conducted twice a year. Successful candidates are admitted into the respective Academies after an interview conducted by the Services Selection Board. 
-        All candidates who apply for the Air Force through more than one source will be tested/interviewed at the Air Force Selection Boards only once for Air Force. Common candidates who fail in Computer Pilot 
-        Selection System (CPSS) and/ or Pilot Aptitude Battery tests as an NCC or Airmen candidate will be called again for OLQ testing for Army/Navy/OTA only if it is found that they have applied through CDS Exam.
+        <div class="row">
+            <div class="form-group col-xl-5 px-5 mx-auto">
+                <input type="submit" value="Calculate" class="btn btn-outline-light" />
+            </div>
+        </div>
+    </form>
+
+    <p style="color: azure; font-size: 20px; margin-top: 50px; margin-left: 20px; margin-right: 20px;" class="text-center">
+        {{results}}
+        {{ageover_error}}
     </p>
-    <br>
-    <br>
-    <h1 class="fs-1 text-center">AFCAT exam</h1>
-    <br>
-    <p>
-        Air Force Common Admission Test commonly known as AFCAT is an entrance examination conducted by Indian Air Force to select eligible and desirable candidates for multiple posts in Flying and Ground Duty 
-        [Technical and Non- Technical]. AFCAT is conducted twice every year and millions of students appear to ace 
-        this exam and join reputable Air Force Academy and get commission as an Indian Air Force Officer. 
-        To crack the exam with good marks, aspirants must be well-versed with the AFCAT 2021 Syllabus, Exam Pattern, Eligibility Criteria and Selection Process. This exam has brought out the possibility of serving 
-        in an adventurous field for both male and female candidates which are befitting to the Young minds and 
-        flexibility of this dynamic generation. Serving in such a commendable and respected field is an honor in itself.
-    </p>
-    <br>
-    <br>
-    <h1 class="fs-1 text-center">Civil Services Examination</h1>
-    <br>
-    <!-- <style>p1{padding-left: 100px; padding-right: 100px; width: fit-content; background-image: url('8pl20aokny651.jpeg');}</style> -->
-    <p>
-        The Civil Services Examination (CSE) is a nationwide competitive examination in India conducted by the Union Public Service Commission for recruitment to higher Civil Services of the Government of India, including the Indian Administrative Service, Indian Foreign Service, 
-        and Indian Police Service. Also simply referred to as the UPSC examination, it is conducted in three phases - a preliminary examination consisting of two objective-type papers (General Studies Paper I and General Studies Paper II also popularly known as Civil Service Aptitude Test or CSAT), 
-        and a main examination consisting of nine papers of conventional (essay) type, in which two papers are qualifying and only marks of seven are counted followed by a personality test (interview).[2] A successful candidate sits for 32 hours of examination during the complete process.
-    </p>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+
 
     <script>
-    $(document).ready(function () {
-        $("#exam_id").change(function () {
-            var val = $(this).val();
-            if (val == "National Defence Academy") {
-                $("#gender_id").html("<option value='Male'>Male</option><option value='Female'>Female</option>");
-                $("#preference_id").html("<option selected>Select Your First Preference (As given in form)</option><option value='IMA'>IMA</option><option value='INA'>INA</option><option value='AFA'>AFA</option><option disabled value='OTA'>OTA</option>");
-                $("#category_id").html("<select class='form-select mt-3' name='Category' id='category_id' aria-label='Default select example' disabled>")
-            }
+        $(document).ready(function () {
+            $("#exam_id").change(function () {
+                var val = $(this).val();
+                if (val == "National Defence Academy") {
+                    $("#gender_id").html("<option value='Male'>Male</option><option value='Female'>Female</option>");
+                    $("#preference_id").html("<option selected>Select Your First Preference (As given in form)</option><option value='IMA'>IMA</option><option value='INA'>INA</option><option value='AFA'>AFA</option><option disabled value='OTA'>OTA</option>");
+                    $("#category_id").html("<select class='form-select mt-3' name='Category' id='category_id' aria-label='Default select example' disabled>")
+                }
+            });
         });
-    });
-    </script>
 
-    <script>
+
+
         $(document).ready(function () {
             $("#exam_id").change(function () {
                 var val = $(this).val();
@@ -250,9 +124,9 @@
                 }
             });
         });
-        </script>
-    
-    <script>
+
+
+
         $(document).ready(function () {
             $("#exam_id").change(function () {
                 var val = $(this).val();
@@ -263,9 +137,9 @@
                 }
             });
         });
-        </script>
-    
-    <script>
+
+
+
         $(document).ready(function () {
             $("#exam_id").change(function () {
                 var val = $(this).val();
@@ -275,25 +149,20 @@
                 }
             });
         });
-        </script>
-        
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-        crossorigin="anonymous"></script> -->
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" 
-    integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" 
-    crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" 
-    integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" 
-    crossorigin="anonymous">
     </script>
-    -->
+
+
 </body>
+
+
+<style>
+    body {
+        background-color: rgb(61, 61, 61);
+    }
+
+    ::placeholder {
+        color: rgb(0, 0, 0);
+    }
+</style>
 
 </html>
