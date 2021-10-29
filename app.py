@@ -25,13 +25,15 @@ def getvalues():
                                         and ending_date >= '{dob}'
                                     """)
             results_list= list(db_conn.c.fetchall())
+            trialist= [i for ele in results_list for i in ele]
+    
             if table=="cse" and len(results_list) :
-                results = ' '.join(str(v) for v in results_list)
-                return render_template("index.html", results=f"Your available attempts for the exam is/are {results_list}\n\nAge Relaxation on upper age limit for category students and Ex-Servicemen:\n1. OBC= +3 years\n2. SC/ST= +5 years\n3. PWD= +10 years\n4. Ex-Servicemen with 5 years of service= +5 years")
+                results = ', '.join(str(v) for v in trialist)
+                return render_template("index.html", results=f"Your available attempts for the exam is/are {results}\n\nAge Relaxation on upper age limit for category students and Ex-Servicemen:\n1. OBC= +3 years\n2. SC/ST= +5 years\n3. PWD= +10 years\n4. Ex-Servicemen with 5 years of service= +5 years")
 
             elif len(results_list):
-                results = ' '.join(str(v) for v in results_list)
-                return render_template("index.html", results=f"Your available attempts for the exam is/are {results_list}")
+                results = ', '.join(str(v) for v in trialist)
+                return render_template("index.html", results=f"Your available attempts for the exam is/are {results}")
 
             else:
                 ageover_error='Your entered age is out of attempts.'
