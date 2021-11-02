@@ -3,6 +3,7 @@ from flask import Flask,render_template,request
 app = Flask(__name__)
 
 
+
 @app.route("/")
 def main_page():
     return render_template('index.html')
@@ -39,7 +40,6 @@ def getvalues():
                 ageover_error='Your entered age is out of attempts.'
                 return render_template("index.html",ageover_error=ageover_error)
             
-
 
         if exam=="National Defence Academy" and gender=="Male":
             main_return= calc('nda',input_dob)
