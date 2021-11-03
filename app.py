@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request, jsonify
 
 app = Flask(__name__)
 
@@ -30,11 +30,11 @@ def getvalues():
     
             if table=="cse" and len(results_list) :
                 results = ', '.join(str(v) for v in trialist)
-                return render_template("index.html", results=f"Your available attempts for the exam is/are {results}\n\nAge Relaxation on upper age limit for category students and Ex-Servicemen:\n1. OBC= +3 years\n2. SC/ST= +5 years\n3. PWD= +10 years\n4. Ex-Servicemen with 5 years of service= +5 years")
+                return render_template("index.html", cse_results=results)
 
             elif len(results_list):
                 results = ', '.join(str(v) for v in trialist)
-                return render_template("index.html", results=f"Your available attempts for the exam is/are {results}")
+                return render_template("index.html", results=results)
 
             else:
                 ageover_error='Your entered age is out of attempts.'

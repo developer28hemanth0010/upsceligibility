@@ -132,8 +132,18 @@
     </div>
 
     <p style="color: azure; font-size: 20px; margin-top: 20px;" class="text-center container-sm">
-        <b>{{results}}</b>
+       {% if results %}
+       Your available attempts for the exam is/are&ensp;<b>{{results}}</b>
+       {% endif %}
+
+       {% if cse_results %}
+       Your available attempts for the exam is/are&ensp;<b>{{cse_results}}</b><br>Age Relaxation on upper age limit for category students and Ex-Servicemen: <br> 1. OBC= +3 years <br> 2. SC/ST= +5 years <br> 3. PWD= +10 years <br> 4. Ex-Servicemen with 5 years of service= +5 years
+       {% endif %}
+        
+        {% if ageover_error %}
         <b>{{ageover_error}}</b>
+        {% endif %}
+        
     </p>
     
 
