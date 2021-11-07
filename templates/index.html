@@ -65,18 +65,17 @@
     </nav>
 
     <div class="container">
-    <form action="/get" method='POST' id="form_id">
+    <form action="/response" method='POST' id="form_id">
 
         <select class="form-select mx-auto align-items-center" name="exam" id="exam_id"
             aria-label="Default select example"
             style="background-color: rgb(121, 121, 121); color: azure; ">
             <option selected>Select Your Examination</option>
-            <option value="National Defence Academy">National Defence Academy</option>
-            <option value="Combined Defence Services Examination">Combined Defence Services Examination</option>
-            <option value="AFCAT">AFCAT</option>
-            <option value="Civil Services Examination">Civil Services Examination</option>
-            <option value="IES">India Engineering Services</option>
-            <!-- width: 320px; margin-top: 80px; -->
+            <option value="nda">National Defence Academy</option>
+            <option value="cds">Combined Defence Services Examination</option>
+            <option value="afcat">AFCAT</option>
+            <option value="cse">Civil Services Examination</option>
+            <!-- <option value="IES">India Engineering Services</option> -->
         </select>
 
 
@@ -95,8 +94,8 @@
             aria-label="Disabled select example"
             style="background-color: rgb(121, 121, 121); color: azure;">
             <option disabled selected>Select Your Gender</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
         </select>
 
 
@@ -104,10 +103,10 @@
             aria-label="Disabled select example"
             style="background-color: rgb(121, 121, 121); color: azure;">
             <option disabled selected>Select Your First Preference (As given in form)</option>
-            <option value="IMA">IMA</option>
-            <option value="INA">INA</option>
-            <option value="AFA">AFA</option>
-            <option value="OTA">OTA</option>
+            <option value="ima">IMA</option>
+            <option value="ina">INA</option>
+            <option value="afa">AFA</option>
+            <option value="ota">OTA</option>
         </select>
 
 
@@ -156,9 +155,9 @@
         $(document).ready(function () {
             $("#exam_id").change(function () {
                 var val = $(this).val();
-                if (val == "National Defence Academy") {
-                    $("#gender_id").html("<option value='Male'>Male</option><option value='Female'>Female</option>");
-                    $("#preference_id").html("<option selected>Select Your First Preference (As given in form)</option><option value='IMA'>IMA</option><option value='INA'>INA</option><option value='AFA'>AFA</option><option disabled value='OTA'>OTA</option>");
+                if (val == "nda") {
+                    $("#gender_id").html("<option value='male'>Male</option><option value='female'>Female</option>");
+                    $("#preference_id").html("<option selected>Select Your First Preference (As given in form)</option><option value='ima'>IMA</option><option value='ina'>INA</option><option value='afa'>AFA</option><option disabled value='ota'>OTA</option>");
                     $("#category_id").html("<select class='form-select mt-3' name='Category' id='category_id' aria-label='Default select example' disabled>")
                 }
             });
@@ -169,7 +168,7 @@
         $(document).ready(function () {
             $("#exam_id").change(function () {
                 var val = $(this).val();
-                if (val == "Combined Defence Services Examination") {
+                if (val == "cds") {
                     // $("#gender_id").html("<option selected>Select Your Gender</option><option value='Male'>Male</option><option value='Female'>Female</option><option value='Others'>Others</option>");     
                     $("#category_id").html("<select class='form-select mt-3' name='Category' id='category_id' aria-label='Default select example' disabled>")
                 }
@@ -181,9 +180,9 @@
         $(document).ready(function () {
             $("#exam_id").change(function () {
                 var val = $(this).val();
-                if (val == "AFCAT") {
+                if (val == "afcat") {
                     // $("#gender_id").html("<option selected>Select Your Gender</option><option value='Male'>Male</option><option value='Female'>Female</option><option value='Others'>Others</option>");
-                    $("#preference_id").html("<option selected>Select Your Role</option><option value='AFA_flying'>AFA Flying Branch</option><option value='AFA_gd'>AFA Ground Duties</option>");
+                    $("#preference_id").html("<option selected>Select Your Role</option><option value='afa_flying'>AFA Flying Branch</option><option value='afa_gd'>AFA Ground Duties</option>");
                     $("#category_id").html("<select class='form-select mt-3' name='Category' id='category_id' aria-label='Default select example' disabled>")
                 }
             });
@@ -194,9 +193,9 @@
         $(document).ready(function () {
             $("#exam_id").change(function () {
                 var val = $(this).val();
-                if (val == "Civil Services Examination") {
+                if (val == "cse") {
                     $("category_id").html("<option selected>Select Your Category</option><option value='general'>General</option><option value='OBC'>OBC</option><option value='SC/ST'>SC/ST</option><option value='PWD'>PWD</option>");
-                    $("#preference_id").html("<option selected>Select Your Preference</option><option value='IAS'>IAS</option><option value='IPS'>IPS</option><option value='IRS'>IRS</option><option value='IFS'>IFS</option><option value='Others'>Allied Services</option>");
+                    $("#preference_id").html("<option selected>Select Your Preference</option><option value='ias'>IAS</option><option value='ips'>IPS</option><option value='irs'>IRS</option><option value='ifs'>IFS</option><option value='others'>Allied Services</option>");
                 }
             });
         });
