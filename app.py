@@ -1,5 +1,5 @@
 from flask import Flask,render_template,request
-import requests
+import requests,json
 
 app = Flask(__name__)
 
@@ -16,13 +16,11 @@ def getvalues():
         input_dob= str(request.form['input_dob'])
         gender= str(request.form['gender'])
         preference= str(request.form['preference'])
-        print(exam,input_dob,gender,preference)
     
         response = requests.get(f'https://api.upsceligibility.live/play?exam={exam}&gender={gender}&pref={preference}&dob={input_dob}')
-        response1= response.json()
-        response2= dict(response1)
-        response2=list(response2.values())[0]
-        return render_template('index.html',results=response2)
+        data= response.json()['Calculated attempts']
+
+        return render_template('index.html',results=data)
 
 
 if __name__=="__main__":
