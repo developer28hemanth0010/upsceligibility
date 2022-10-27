@@ -17,7 +17,7 @@ def getvalues():
         gender= str(request.form['gender'])
         preference= str(request.form['preference'])
     
-        response = requests.get(f'https://api.upsceligibility.live/play?exam={exam}&gender={gender}&pref={preference}&dob={input_dob}')
+        response = requests.get(f'https://apiupsceligibility.herokuapp.com/play?exam={exam}&gender={gender}&pref={preference}&dob={input_dob}')
         data= response.json()['Calculated attempts']
 
         return render_template('index.html',results=data)
